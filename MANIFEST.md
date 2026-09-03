@@ -1,0 +1,64 @@
+# Manifest
+
+Total files (excluding this manifest): **58**.
+
+| Path | Bytes |
+|---|---:|
+| `CHANGELOG.md` | 376 |
+| `LICENSE` | 621 |
+| `README.md` | 2957 |
+| `SKILL.md` | 13332 |
+| `SOURCES.md` | 2521 |
+| `VALIDATION_REPORT.md` | 2953 |
+| `references/00-version-and-migration.md` | 6580 |
+| `references/01-architecture-decisions.md` | 6172 |
+| `references/02-agent-core.md` | 6951 |
+| `references/03-models-and-local-inference.md` | 5423 |
+| `references/04-tools-guardrails-hitl.md` | 7912 |
+| `references/05-sessions-state-memory-learning.md` | 7289 |
+| `references/06-knowledge-rag.md` | 6324 |
+| `references/07-teams-workflows.md` | 7068 |
+| `references/08-agentos-api-interfaces.md` | 10872 |
+| `references/09-security-multitenancy.md` | 10502 |
+| `references/10-observability-evals.md` | 10240 |
+| `references/11-deployment-operations.md` | 10220 |
+| `references/12-companion-app-blueprint.md` | 16968 |
+| `references/13-troubleshooting.md` | 12564 |
+| `references/14-testing-checklists.md` | 9577 |
+| `scripts/inspect_agno_project.py` | 19356 |
+| `scripts/run_checks.sh` | 259 |
+| `scripts/scaffold_agno_app.py` | 2339 |
+| `scripts/validate_skill.py` | 7241 |
+| `templates/agentos_minimal.py` | 733 |
+| `templates/agno-docs.mcp.json.example` | 92 |
+| `templates/evals_example.py` | 1259 |
+| `templates/hitl_agent.py` | 1106 |
+| `templates/knowledge_agent.py` | 1703 |
+| `templates/minimal_agent.py` | 583 |
+| `templates/production_agentos/.env.example` | 1054 |
+| `templates/production_agentos/.gitignore` | 73 |
+| `templates/production_agentos/Dockerfile` | 294 |
+| `templates/production_agentos/Makefile` | 264 |
+| `templates/production_agentos/README.md` | 6793 |
+| `templates/production_agentos/docker-compose.yml` | 1215 |
+| `templates/production_agentos/evals/README.md` | 317 |
+| `templates/production_agentos/evals/run_accuracy.py` | 1026 |
+| `templates/production_agentos/pyproject.toml` | 682 |
+| `templates/production_agentos/requests.http` | 797 |
+| `templates/production_agentos/src/agno_app/__init__.py` | 58 |
+| `templates/production_agentos/src/agno_app/agent.py` | 1340 |
+| `templates/production_agentos/src/agno_app/app.py` | 1698 |
+| `templates/production_agentos/src/agno_app/db.py` | 314 |
+| `templates/production_agentos/src/agno_app/model.py` | 856 |
+| `templates/production_agentos/src/agno_app/schemas.py` | 294 |
+| `templates/production_agentos/src/agno_app/settings.py` | 4780 |
+| `templates/production_agentos/src/agno_app/tools.py` | 2340 |
+| `templates/production_agentos/tests/conftest.py` | 562 |
+| `templates/production_agentos/tests/test_schemas.py` | 406 |
+| `templates/production_agentos/tests/test_settings.py` | 678 |
+| `templates/production_agentos/tests/test_smoke.py` | 306 |
+| `templates/skill_loader.py` | 914 |
+| `templates/structured_agent.py` | 1061 |
+| `templates/team_example.py` | 1317 |
+| `templates/vllm_agent.py` | 939 |
+| `templates/workflow_example.py` | 1263 |
