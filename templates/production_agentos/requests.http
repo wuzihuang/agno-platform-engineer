@@ -1,0 +1,32 @@
+### Health
+GET http://localhost:7777/health
+
+### Inspect runtime
+GET http://localhost:7777/config
+
+### Non-stream Agent run
+POST http://localhost:7777/agents/support-assistant-v1/runs
+Content-Type: multipart/form-data; boundary=AgentBoundary
+
+--AgentBoundary
+Content-Disposition: form-data; name="message"
+
+Explain what you can help with.
+--AgentBoundary
+Content-Disposition: form-data; name="session_id"
+
+session_demo_001
+--AgentBoundary
+Content-Disposition: form-data; name="stream"
+
+false
+--AgentBoundary--
+
+### Stream with curl instead:
+# curl -N -X POST http://localhost:7777/agents/support-assistant-v1/runs \
+#   -F 'message=Help me troubleshoot a login issue' \
+#   -F 'session_id=session_demo_001' \
+#   -F 'stream=true'
+#
+# With auth enabled add:
+#   -H 'Authorization: Bearer YOUR_JWT'

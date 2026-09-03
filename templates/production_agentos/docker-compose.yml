@@ -1,0 +1,45 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: agno
+      POSTGRES_PASSWORD: agno
+      POSTGRES_DB: agno
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U agno -d agno"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    volumes:
+      - agno_postgres:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  agentos:
+    build: .
+    environment:
+      APP_ENV: development
+      APP_HOST: 0.0.0.0
+      APP_PORT: 7777
+      DATABASE_URL: postgresql+psycopg://agno:agno@postgres:5432/agno
+      MODEL_PROVIDER: ${MODEL_PROVIDER:-openai}
+      MODEL_ID: ${MODEL_ID:-gpt-5.5}
+      MODEL_BASE_URL: ${MODEL_BASE_URL:-}
+      MODEL_API_KEY: ${MODEL_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      VLLM_BASE_URL: ${VLLM_BASE_URL:-http://host.docker.internal:8000/v1/}
+      VLLM_API_KEY: ${VLLM_API_KEY:-local-token}
+      AUTHORIZATION_ENABLED: "false"
+      MEMORY_ENABLED: "false"
+      CORS_ALLOWED_ORIGINS: http://localhost:3000
+      TRACING_ENABLED: "true"
+      MCP_ENABLED: "false"
+      AGNO_TELEMETRY: "false"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "7777:7777"
+
+volumes:
+  agno_postgres:
